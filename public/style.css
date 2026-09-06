@@ -1,0 +1,1464 @@
+css
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: #16070f;
+    color: #fff5f7;
+    font-family: "DM Sans", sans-serif;
+    position: relative;
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.background {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    z-index: -10;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(117, 24, 61, 0.45), transparent 35%),
+        radial-gradient(circle at 80% 15%, rgba(89, 24, 67, 0.4), transparent 35%),
+        radial-gradient(circle at 50% 90%, rgba(177, 74, 102, 0.18), transparent 40%),
+        linear-gradient(135deg, #16070f, #260b19 45%, #12050d);
+}
+
+
+/* =========================================================
+   GLOWING ORBS
+========================================================= */
+
+.gradient-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(70px);
+    opacity: 0.55;
+    animation: floatOrb 12s ease-in-out infinite alternate;
+}
+
+.orb-one {
+    width: 280px;
+    height: 280px;
+    background: rgba(142, 25, 67, 0.5);
+    top: -80px;
+    left: -80px;
+}
+
+.orb-two {
+    width: 240px;
+    height: 240px;
+    background: rgba(103, 24, 76, 0.5);
+    right: -70px;
+    top: 20%;
+    animation-delay: -3s;
+}
+
+.orb-three {
+    width: 300px;
+    height: 300px;
+    background: rgba(178, 70, 102, 0.25);
+    left: 15%;
+    bottom: -150px;
+    animation-delay: -6s;
+}
+
+.orb-four {
+    width: 220px;
+    height: 220px;
+    background: rgba(143, 43, 76, 0.35);
+    right: 15%;
+    bottom: 5%;
+    animation-delay: -9s;
+}
+
+@keyframes floatOrb {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(40px, -30px) scale(1.12);
+    }
+
+    100% {
+        transform: translate(-30px, 40px) scale(0.95);
+    }
+}
+
+
+/* =========================================================
+   STARS
+========================================================= */
+
+.stars {
+    position: absolute;
+    inset: 0;
+    opacity: 0.45;
+
+    background-image:
+        radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1.5px);
+
+    background-size: 90px 90px;
+    animation: starsMove 25s linear infinite;
+}
+
+.stars-two {
+    background-size: 150px 150px;
+    opacity: 0.2;
+    animation-duration: 40s;
+    animation-direction: reverse;
+}
+
+@keyframes starsMove {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-90px);
+    }
+}
+
+
+/* =========================================================
+   MAIN CARD
+========================================================= */
+
+.birthday-card {
+    width: min(720px, calc(100% - 32px));
+    margin: 60px auto;
+    padding: 48px 42px;
+
+    position: relative;
+    z-index: 5;
+
+    text-align: center;
+
+    background: rgba(45, 10, 27, 0.58);
+    border: 1px solid rgba(255, 184, 203, 0.18);
+    border-radius: 32px;
+
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+
+    box-shadow:
+        0 30px 90px rgba(0, 0, 0, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+    animation: cardAppear 1.2s ease forwards;
+}
+
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(35px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* =========================================================
+   TOP LABEL
+========================================================= */
+
+.top-label {
+    display: inline-block;
+    margin-bottom: 22px;
+
+    color: #e9a8bb;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   CAKE
+========================================================= */
+
+.cake {
+    font-size: 76px;
+    line-height: 1;
+    margin-bottom: 22px;
+
+    filter:
+        drop-shadow(0 0 12px rgba(255, 120, 160, 0.35));
+
+    animation:
+        cakeFloat 3.2s ease-in-out infinite,
+        cakeGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes cakeFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(-2deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(2deg);
+    }
+}
+
+@keyframes cakeGlow {
+    from {
+        filter:
+            drop-shadow(0 0 8px rgba(255, 120, 160, 0.25));
+    }
+
+    to {
+        filter:
+            drop-shadow(0 0 24px rgba(255, 170, 190, 0.55));
+    }
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.intro {
+    max-width: 520px;
+    margin: 0 auto 18px;
+
+    color: rgba(255, 231, 238, 0.7);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+h1 {
+    margin: 8px 0 22px;
+
+    font-family: "Playfair Display", serif;
+    font-size: clamp(42px, 8vw, 68px);
+    line-height: 1.05;
+    font-weight: 700;
+
+    color: #fff4f7;
+    letter-spacing: -1.5px;
+}
+
+h1 span {
+    display: block;
+
+    background: linear-gradient(
+        90deg,
+        #f4b6c8,
+        #ffd99d,
+        #e99ab5
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+
+    margin: 28px auto;
+
+    color: #dca0b5;
+    font-size: 12px;
+}
+
+.divider span {
+    width: 90px;
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(230, 159, 181, 0.5)
+    );
+}
+
+.divider span:last-child {
+    transform: rotate(180deg);
+}
+
+
+/* =========================================================
+   URDU POETRY
+========================================================= */
+
+.urdu-poetry {
+    padding: 25px 24px;
+    margin: 10px 0 28px;
+
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid rgba(255, 190, 208, 0.1);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.urdu-poetry p {
+    margin: 8px 0;
+
+    color: #f7d9e2;
+    font-family: "Noto Naskh Arabic", serif;
+    font-size: 20px;
+    line-height: 2;
+}
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+.message {
+    max-width: 590px;
+    margin: 0 auto 30px;
+}
+
+.message p {
+    margin-bottom: 16px;
+
+    color: rgba(255, 235, 241, 0.78);
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+
+/* =========================================================
+   DUA CARD
+========================================================= */
+
+.dua-card {
+    margin: 30px 0;
+    padding: 28px 25px;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(113, 28, 60, 0.28),
+            rgba(68, 20, 58, 0.25)
+        );
+
+    border: 1px solid rgba(255, 196, 211, 0.13);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+.dua-icon {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.dua-card h2 {
+    margin-bottom: 12px;
+
+    font-family: "Playfair Display", serif;
+    font-size: 25px;
+    color: #f7d1dc;
+}
+
+.dua-card p {
+    max-width: 520px;
+    margin: auto;
+
+    color: rgba(255, 232, 239, 0.72);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.dua-card strong {
+    display: block;
+    margin-top: 16px;
+
+    color: #f2b8c9;
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   SURPRISE BUTTON
+========================================================= */
+
+#surpriseBtn {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    padding: 15px 27px;
+
+    border: 1px solid rgba(255, 211, 222, 0.2);
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7c173f,
+            #8c275c,
+            #6c1749
+        );
+
+    color: #fff;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 12px 35px rgba(100, 15, 55, 0.35);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        filter 0.3s ease;
+}
+
+#surpriseBtn:hover {
+    transform: translateY(-3px) scale(1.03);
+
+    box-shadow:
+        0 18px 45px rgba(151, 35, 84, 0.45);
+
+    filter: brightness(1.12);
+}
+
+#surpriseBtn:active {
+    transform: scale(0.96);
+}
+
+.button-icon {
+    font-size: 20px;
+}
+
+
+/* =========================================================
+   SURPRISE MESSAGE
+========================================================= */
+
+.surprise {
+    display: none;
+
+    margin-top: 30px;
+    padding: 30px 24px;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(125, 27, 62, 0.35),
+            rgba(80, 21, 65, 0.3)
+        );
+
+    border: 1px solid rgba(255, 193, 211, 0.2);
+
+    animation: surpriseAppear 1s ease forwards;
+}
+
+.surprise.active {
+    display: block;
+}
+
+.surprise-glow {
+    margin-bottom: 8px;
+    font-size: 28px;
+
+    animation: sparklePulse 1.5s ease-in-out infinite;
+}
+
+.surprise h2 {
+    margin-bottom: 12px;
+
+    font-family: "Playfair Display", serif;
+    font-size: 30px;
+
+    color: #f8d2dd;
+}
+
+.surprise p {
+    color: rgba(255, 233, 240, 0.75);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.emoji-row {
+    margin-top: 18px;
+    font-size: 25px;
+    letter-spacing: 8px;
+}
+
+@keyframes surpriseAppear {
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes sparklePulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   MESSAGE REVEAL
+========================================================= */
+
+.birthday-card.message-reveal {
+    animation: finalReveal 1.1s ease forwards;
+}
+
+@keyframes finalReveal {
+    0% {
+        transform: scale(0.96);
+    }
+
+    55% {
+        transform: scale(1.025);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* =========================================================
+   BOTTOM
+========================================================= */
+
+.bottom-line {
+    width: 120px;
+    height: 1px;
+
+    margin: 32px auto 18px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(238, 172, 192, 0.55),
+        transparent
+    );
+}
+
+.footer-text {
+    color: rgba(255, 205, 218, 0.45);
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   CONFETTI
+========================================================= */
+
+#confetti {
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+    overflow: hidden;
+
+    z-index: 10001;
+}
+
+.confetti-piece {
+    position: absolute;
+    top: -50px;
+
+    pointer-events: none;
+
+    animation:
+        confettiFall linear forwards;
+}
+
+@keyframes confettiFall {
+    0% {
+        transform:
+            translate3d(0, -50px, 0)
+            rotate(0deg)
+            scale(0.8);
+
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translate3d(var(--drift), 110vh, 0)
+            rotate(var(--rotation))
+            scale(1.15);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   CINEMATIC SURPRISE OVERLAY
+========================================================= */
+
+#surpriseAnimation {
+    position: fixed;
+    inset: 0;
+
+    z-index: 9999;
+
+    pointer-events: none;
+
+    display: none;
+
+    overflow: hidden;
+}
+
+#surpriseAnimation.play {
+    display: block;
+}
+
+
+/* =========================================================
+   SCREEN FLASH
+========================================================= */
+
+#screenFlash {
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255, 220, 230, 0.9),
+            rgba(255, 135, 170, 0.35),
+            transparent 65%
+        );
+
+    opacity: 0;
+}
+
+#surpriseAnimation.play #screenFlash {
+    animation: screenFlash 0.65s ease 1.15s;
+}
+
+@keyframes screenFlash {
+    0% {
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 0.9;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   FALLING CAKE
+========================================================= */
+
+.falling-cake {
+    position: absolute;
+
+    left: 50%;
+    top: -180px;
+
+    font-size: 115px;
+
+    transform:
+        translateX(-50%)
+        rotate(-15deg);
+
+    opacity: 0;
+}
+
+#surpriseAnimation.play .falling-cake {
+    animation: cakeFall 1.45s cubic-bezier(0.65, 0, 0.85, 1) forwards;
+}
+
+@keyframes cakeFall {
+
+    0% {
+        top: -180px;
+        transform:
+            translateX(-50%)
+            rotate(-15deg)
+            scale(0.7);
+
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    70% {
+        top: 28%;
+        transform:
+            translateX(-50%)
+            rotate(12deg)
+            scale(1.05);
+    }
+
+    88% {
+        top: 47%;
+        transform:
+            translateX(-50%)
+            rotate(-7deg)
+            scale(1.2);
+    }
+
+    100% {
+        top: 53%;
+        transform:
+            translateX(-50%)
+            rotate(0deg)
+            scale(1.55);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   CAKE TRAIL
+========================================================= */
+
+.cake-trail {
+    position: absolute;
+
+    left: 50%;
+    top: 0;
+
+    width: 5px;
+    height: 50vh;
+
+    transform: translateX(-50%);
+
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(255, 183, 203, 0.25),
+        transparent
+    );
+
+    opacity: 0;
+}
+
+#surpriseAnimation.play .cake-trail {
+    animation: trailShow 1.3s ease forwards;
+}
+
+@keyframes trailShow {
+    0%,
+    100% {
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 0.6;
+    }
+
+    80% {
+        opacity: 0.2;
+    }
+}
+
+
+/* =========================================================
+   IMPACTS
+========================================================= */
+
+.impact {
+    position: absolute;
+
+    left: 50%;
+    top: 52%;
+
+    transform: translate(-50%, -50%) scale(0);
+
+    font-size: 100px;
+
+    opacity: 0;
+}
+
+.impact-one {
+    animation-delay: 1.15s;
+}
+
+.impact-two {
+    animation-delay: 2.85s;
+}
+
+#surpriseAnimation.play .impact-one {
+    animation:
+        impactAnimation
+        0.65s
+        ease-out
+        1.15s
+        forwards;
+}
+
+#surpriseAnimation.play .impact-two {
+    animation:
+        impactAnimation
+        0.65s
+        ease-out
+        2.85s
+        forwards;
+}
+
+@keyframes impactAnimation {
+
+    0% {
+        transform:
+            translate(-50%, -50%)
+            scale(0)
+            rotate(-20deg);
+
+        opacity: 0;
+    }
+
+    25% {
+        transform:
+            translate(-50%, -50%)
+            scale(1.5)
+            rotate(8deg);
+
+        opacity: 1;
+    }
+
+    50% {
+        transform:
+            translate(-50%, -50%)
+            scale(1.05)
+            rotate(-5deg);
+
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translate(-50%, -50%)
+            scale(2.1)
+            rotate(15deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   SCREEN SHAKE
+========================================================= */
+
+body.hit-shake {
+    animation: screenShake 0.55s ease;
+}
+
+@keyframes screenShake {
+
+    0% {
+        transform: translate(0, 0);
+    }
+
+    10% {
+        transform: translate(-10px, 7px);
+    }
+
+    20% {
+        transform: translate(11px, -8px);
+    }
+
+    30% {
+        transform: translate(-8px, -5px);
+    }
+
+    40% {
+        transform: translate(9px, 7px);
+    }
+
+    50% {
+        transform: translate(-6px, 3px);
+    }
+
+    60% {
+        transform: translate(5px, -5px);
+    }
+
+    70% {
+        transform: translate(-3px, 2px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+
+/* =========================================================
+   SPARKS
+========================================================= */
+
+#sparkContainer {
+    position: absolute;
+    inset: 0;
+}
+
+.spark {
+    position: absolute;
+
+    left: 50%;
+    top: 52%;
+
+    font-size: 24px;
+    font-weight: 700;
+
+    color: #ffe2a8;
+
+    opacity: 0;
+
+    transform:
+        translate(-50%, -50%)
+        scale(0.2);
+
+    animation: sparkFly 1.2s ease-out forwards;
+
+    text-shadow:
+        0 0 12px rgba(255, 211, 143, 0.9);
+}
+
+@keyframes sparkFly {
+
+    0% {
+        opacity: 0;
+        transform:
+            translate(-50%, -50%)
+            scale(0.2);
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translate(
+                calc(-50% + var(--x)),
+                calc(-50% + var(--y))
+            )
+            scale(1.3)
+            rotate(180deg);
+    }
+}
+
+
+/* =========================================================
+   FALLING EGG
+========================================================= */
+
+.falling-egg {
+    position: absolute;
+
+    left: 50%;
+    top: -150px;
+
+    font-size: 100px;
+
+    opacity: 0;
+
+    transform:
+        translateX(-50%)
+        rotate(0deg);
+}
+
+#surpriseAnimation.play .falling-egg {
+    animation:
+        eggFall
+        1.25s
+        cubic-bezier(0.7, 0, 0.85, 1)
+        1.75s
+        forwards;
+}
+
+@keyframes eggFall {
+
+    0% {
+        top: -150px;
+
+        opacity: 0;
+
+        transform:
+            translateX(-50%)
+            rotate(-25deg)
+            scale(0.65);
+    }
+
+    12% {
+        opacity: 1;
+    }
+
+    65% {
+        top: 27%;
+
+        transform:
+            translateX(-50%)
+            rotate(25deg)
+            scale(1);
+    }
+
+    88% {
+        top: 48%;
+
+        transform:
+            translateX(-50%)
+            rotate(-15deg)
+            scale(1.1);
+    }
+
+    100% {
+        top: 53%;
+
+        opacity: 0;
+
+        transform:
+            translateX(-50%)
+            rotate(0deg)
+            scale(1.5);
+    }
+}
+
+
+/* =========================================================
+   EGG SPLIT
+========================================================= */
+
+.egg-split-container {
+    position: absolute;
+    left: 50%;
+    top: 53%;
+
+    width: 150px;
+    height: 120px;
+
+    transform: translate(-50%, -50%);
+}
+
+.egg-split {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    font-size: 80px;
+
+    opacity: 0;
+
+    transform:
+        translate(-50%, -50%)
+        scale(0.4);
+}
+
+#surpriseAnimation.play .egg-left {
+    animation:
+        eggLeft
+        1.1s
+        cubic-bezier(0.2, 0.8, 0.3, 1)
+        3.0s
+        forwards;
+}
+
+#surpriseAnimation.play .egg-right {
+    animation:
+        eggRight
+        1.1s
+        cubic-bezier(0.2, 0.8, 0.3, 1)
+        3.0s
+        forwards;
+}
+
+@keyframes eggLeft {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            scale(0.4);
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translate(
+                calc(-50% - 95px),
+                calc(-50% - 45px)
+            )
+            rotate(-35deg)
+            scale(0.65);
+    }
+}
+
+@keyframes eggRight {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            scale(0.4);
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translate(
+                calc(-50% + 95px),
+                calc(-50% - 25px)
+            )
+            rotate(35deg)
+            scale(0.65);
+    }
+}
+
+
+/* =========================================================
+   EGG SPLAT
+========================================================= */
+
+#eggSplat {
+    position: absolute;
+
+    left: 50%;
+    top: 53%;
+
+    font-size: 85px;
+
+    opacity: 0;
+
+    transform:
+        translate(-50%, -50%)
+        scale(0);
+}
+
+#surpriseAnimation.play #eggSplat {
+    animation:
+        eggSplatAnimation
+        0.8s
+        ease-out
+        3s
+        forwards;
+}
+
+@keyframes eggSplatAnimation {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            scale(0);
+    }
+
+    20% {
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.5);
+    }
+
+    50% {
+        opacity: 0.9;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.1);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            scale(2.3);
+    }
+}
+
+
+/* =========================================================
+   EGG PARTICLES
+========================================================= */
+
+.egg-particle {
+    position: absolute;
+
+    left: 50%;
+    top: 53%;
+
+    font-size: 32px;
+
+    opacity: 0;
+}
+
+#surpriseAnimation.play .particle-one {
+    animation:
+        particleOne
+        1s
+        ease-out
+        3.05s
+        forwards;
+}
+
+#surpriseAnimation.play .particle-two {
+    animation:
+        particleTwo
+        1s
+        ease-out
+        3.05s
+        forwards;
+}
+
+#surpriseAnimation.play .particle-three {
+    animation:
+        particleThree
+        1s
+        ease-out
+        3.05s
+        forwards;
+}
+
+#surpriseAnimation.play .particle-four {
+    animation:
+        particleFour
+        1s
+        ease-out
+        3.05s
+        forwards;
+}
+
+@keyframes particleOne {
+    to {
+        opacity: 0;
+        transform: translate(-100px, -80px) rotate(180deg);
+    }
+
+    from {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes particleTwo {
+    to {
+        opacity: 0;
+        transform: translate(110px, -50px) rotate(-180deg);
+    }
+
+    from {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes particleThree {
+    to {
+        opacity: 0;
+        transform: translate(-50px, -120px) rotate(250deg);
+    }
+
+    from {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes particleFour {
+    to {
+        opacity: 0;
+        transform: translate(75px, 35px) rotate(-220deg);
+    }
+
+    from {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #17070f;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #6e2346;
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #92335d;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .birthday-card {
+        width: calc(100% - 20px);
+        margin: 25px auto;
+        padding: 35px 20px;
+        border-radius: 25px;
+    }
+
+    .top-label {
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+
+    .cake {
+        font-size: 62px;
+    }
+
+    .intro {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 43px;
+    }
+
+    .urdu-poetry {
+        padding: 20px 15px;
+    }
+
+    .urdu-poetry p {
+        font-size: 18px;
+        line-height: 1.9;
+    }
+
+    .message p {
+        font-size: 14px;
+    }
+
+    .dua-card {
+        padding: 24px 17px;
+    }
+
+    .dua-card p {
+        font-size: 13px;
+    }
+
+    .falling-cake {
+        font-size: 85px;
+    }
+
+    .falling-egg {
+        font-size: 75px;
+    }
+
+    .impact {
+        font-size: 70px;
+    }
+
+    #eggSplat {
+        font-size: 65px;
+    }
+
+    .egg-split {
+        font-size: 60px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+    }
+}
